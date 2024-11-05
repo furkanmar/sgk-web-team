@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar-wrapper d-flex flex-column bg-dark" :class="{ 'collapsed': isCollapsed }" style="">
-    <img src="@/assets/cs-logo.png" alt="CS Logo" class="mt-3 mx-5 align-self-center" style="width: 50px; height: auto;">
-    <button class="toggle-button btn btn-dark m-3" @click="toggleSidebar">
+    <img src="@/assets/cs-logo.png" alt="CS Logo" class="my-3 mx-5 align-self-center" style="width: 50px; height: auto;">
+    <button id="toggle" class="toggle-button btn btn-dark mx-3 mb-3" @click="toggleSidebar">
       <i class="fas fa-bars"></i>
     </button>
     <div class="p-2 sidebar-container">
@@ -20,6 +20,7 @@
       </div>
     </div>
   </div>
+  ## Fix bug where the navbar can get stuck when the window size is reduced.
 </template>
 
 <script>
@@ -91,5 +92,10 @@ export default {
 
 .list-group-item:hover {
   cursor: pointer;
+}
+@media only screen and (min-width: 1026px) {
+  #toggle {
+    display: none;
+  }
 }
 </style>
