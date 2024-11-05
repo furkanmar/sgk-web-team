@@ -20,7 +20,7 @@
       </div>
     </div>
   </div>
-  ## Fix bug where the navbar can get stuck when the window size is reduced.
+  <!-- TODO: Fix bug where the navbar can get stuck when the window size is reduced. -->
 </template>
 
 <script>
