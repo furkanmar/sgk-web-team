@@ -1,14 +1,14 @@
 <template>
   <div id="app" class="d-flex flex-column vh-100">
     <div class="d-flex flex-grow-1 overflow-hidden">
-      <div class="border border-black d-flex ">
+      <div class=" d-flex ">
         <SideBar ></SideBar>
       </div>
-      <div class="flex-fill p-3 overflow-auto bg-light border border-black mx-3" >
+      <div class="flex-fill overflow-auto bg-dark-subtle p-3" >
         <router-view ></router-view>
       </div>
     </div>
-    <div class="border  border-black">
+    <div class="k">
       <FooterComp></FooterComp>
     </div>
   </div>

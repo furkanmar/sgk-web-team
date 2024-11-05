@@ -1,6 +1,7 @@
 <template>
-  <div class="sidebar-wrapper d-flex flex-column" :class="{ 'collapsed': isCollapsed }" style="background-color: bisque;">
-    <button class="toggle-button btn btn-light mb-3" @click="toggleSidebar">
+  <div class="sidebar-wrapper d-flex flex-column bg-dark" :class="{ 'collapsed': isCollapsed }" style="">
+    <img src="@/assets/cs-logo.png" alt="CS Logo" class="mt-3 mx-5 align-self-center" style="width: 50px; height: auto;">
+    <button class="toggle-button btn btn-dark m-3" @click="toggleSidebar">
       <i class="fas fa-bars"></i>
     </button>
     <div class="p-2 sidebar-container">
@@ -9,9 +10,9 @@
           v-for="category in categories"
           :key="category.id"
           :to="category.path"
-          class="list-group-item border border-2 rounded-pill d-flex align-items-center bg-light"
+          class="list-group-item border border-2 d-flex align-items-center m-1"
           :class="{ 'active': $route.path === category.path }"
-          style="text-decoration: none; color: black;"
+          style=""
         >
           <i :class="category.icon" class="me-2"></i>
           <span v-if="!isCollapsed">{{ category.name }}</span>
@@ -84,8 +85,8 @@ export default {
 }
 
 .list-group-item.active {
-  background-color: #d1e7dd;
-  color: black;
+  background-color: #5c5c5c;
+  color: white;
 }
 
 .list-group-item:hover {
