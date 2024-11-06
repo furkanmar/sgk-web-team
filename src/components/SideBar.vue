@@ -20,7 +20,6 @@
       </div>
     </div>
   </div>
-  <!-- TODO: Fix bug where the navbar can get stuck when the window size is reduced. -->
 </template>
 
 <script>
@@ -66,7 +65,7 @@ export default {
 }
 
 .sidebar-container {
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .list-group-item {
