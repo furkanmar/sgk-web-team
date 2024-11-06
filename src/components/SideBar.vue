@@ -29,7 +29,7 @@ export default {
   name: 'SideBar',
   data() {
     return {
-      isCollapsed: false,
+      isCollapsed: this.getScreenSmall(),
       isScreenSmall: this.getScreenSmall(),
       categories: [
         { id: 1, name: 'Kategori 1', path: '/category1', icon: 'fas fa-home' },
