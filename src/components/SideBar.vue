@@ -75,18 +75,8 @@ export default {
   width: 100px;
 }
 
-.toggle-button {
-  transition: transform 0.3s ease-in-out;
-}
-
 .sidebar-container {
   overflow: scroll;
-}
-
-.list-group-item {
-  transition: padding 0.3s ease-in-out;
-  overflow: hidden;
-  white-space: nowrap;
 }
 
 .sidebar-wrapper.collapsed .list-group-item {
@@ -99,6 +89,16 @@ export default {
   margin-right: 0;
 }
 
+.toggle-button {
+  transition: transform 0.3s ease-in-out;
+}
+
+.list-group-item {
+  transition: padding 0.3s ease-in-out;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .list-group-item.active {
   background-color: #5c5c5c;
   color: white;
@@ -107,6 +107,7 @@ export default {
 .list-group-item:hover {
   cursor: pointer;
 }
+
 @media only screen and (min-width: 1026px) {
   #toggle {
     display: none;
