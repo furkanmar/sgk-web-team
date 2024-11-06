@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar-wrapper d-flex flex-column bg-dark" :class="{ 'collapsed': isCollapsed }" style="">
+  <div class="sidebar-wrapper d-flex flex-column bg-dark" :class="{ 'collapsed': isScreenSmall ? isCollapsed : false }" style="">
     <img src="@/assets/cs-logo.png" alt="CS Logo" class="my-3 mx-5 align-self-center" style="width: 50px; height: auto;">
     <button id="toggle" class="toggle-button btn btn-dark mx-3" @click="toggleSidebar">
       <i class="fas fa-bars"></i>
@@ -15,7 +15,7 @@
           style=""
         >
           <i :class="category.icon" class="me-2"></i>
-          <span v-if="!isCollapsed">{{ category.name }}</span>
+          <span v-if="isScreenSmall ? !isCollapsed : true">{{ category.name }}</span>
         </router-link>
       </div>
     </div>
@@ -23,11 +23,14 @@
 </template>
 
 <script>
+const minScreenWidthForToggle = 1026;
+
 export default {
   name: 'SideBar',
   data() {
     return {
       isCollapsed: false,
+      isScreenSmall: this.getScreenSmall(),
       categories: [
         { id: 1, name: 'Kategori 1', path: '/category1', icon: 'fas fa-home' },
         { id: 2, name: 'Kategori 2', path: '/category2', icon: 'fas fa-user' },
@@ -46,7 +49,19 @@ export default {
     toggleSidebar() {
       this.isCollapsed = !this.isCollapsed;
     },
+    getScreenSmall() {
+      return window.innerWidth < minScreenWidthForToggle;
+    },
+    updateScreenSmall() {
+      this.isScreenSmall = this.getScreenSmall();
+    },
   },
+  mounted() {
+    window.addEventListener('resize', this.updateScreenSmall);
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.updateScreenSmall);
+  }
 };
 </script>
 
