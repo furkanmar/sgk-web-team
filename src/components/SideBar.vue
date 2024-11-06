@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar-wrapper d-flex flex-column bg-dark" :class="{ 'collapsed': isCollapsed }" style="">
     <img src="@/assets/cs-logo.png" alt="CS Logo" class="my-3 mx-5 align-self-center" style="width: 50px; height: auto;">
-    <button id="toggle" class="toggle-button btn btn-dark mx-3 mb-3" @click="toggleSidebar">
+    <button id="toggle" class="toggle-button btn btn-dark mx-3" @click="toggleSidebar">
       <i class="fas fa-bars"></i>
     </button>
     <div class="p-2 sidebar-container">
