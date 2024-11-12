@@ -2,7 +2,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import CategoryOne from '../components/Pages/CategoryOne.vue';
-import CategoryTwo from '@/components/Pages/CategoryTwo.vue';
+import CategoryTwo from '@/components/Pages/Message/CategoryTwo.vue';
 import CategoryThree from '@/components/Pages/CategoryThree.vue';
 import CategoryFour from '@/components/Pages/CategoryFour.vue';
 import CategoryFive from '@/components/Pages/CategoryFive.vue';

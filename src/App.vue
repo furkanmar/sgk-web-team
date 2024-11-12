@@ -16,9 +16,11 @@ import MainPage from './components/MainPage.vue';
 import LoginPage from './components/LoginPage.vue';
 
 const logIn = ref(false);
-const activeUser = ref("");
+const activeUser = ref({});
 const username = ref("");
 const router = useRouter();
+
+
 
 const logout = () => {
   logIn.value = false;
@@ -27,10 +29,15 @@ const logout = () => {
   router.push('/'); 
 }
 
-const log = (email) => {
-  activeUser.value = email;
-  username.value = email.split('@')[0]; 
+const log = (user) => {
+  console.log(user)
+  
+  activeUser.value = user
+  username.value = user.email.split('@')[0]; 
+  
+
   logIn.value = true;
+
 
   
   router.push(`/${username.value}/category1`); 

@@ -31,6 +31,10 @@
       <div v-show="!login">
         <form @submit.prevent="handleRegister">
           <div class="input-container">
+            <input type="name" v-model="name" placeholder=" " required />
+            <label>Name</label>
+          </div>
+          <div class="input-container">
             <input type="email" v-model="email" placeholder=" " required />
             <label>Email</label>
           </div>
@@ -59,21 +63,26 @@ export default {
   data() {
     return {
       email: "",
+      name:"",
       password: "",
       confirmPassword: "",
       loading: false,
       login: true,
+      users:[],
     };
+  },
+  mounted(){
+    this.users = JSON.parse(localStorage.getItem("users")) || [];
   },
   methods: {
     handleLogin() {
       this.loading = true;
       setTimeout(() => {
         this.loading = false;
-        const users = JSON.parse(localStorage.getItem("users")) || [];
-        const user = users.find(user => user.email === this.email && user.password === this.password);
+        
+        const user = this.users.find(user => user.email === this.email && user.email_password === this.password);
         if (user) {
-          this.$emit("log", this.email);
+          this.$emit("log", user);
         } else {
           alert("Hatalı email veya şifre.");
         }
@@ -84,14 +93,15 @@ export default {
         alert("Şifreler eşleşmiyor.");
         return;
       }
-      const users = JSON.parse(localStorage.getItem("users")) || [];
-      const existingUser = users.find(user => user.email === this.email);
+      
+      const existingUser = this.users.find(user => user.email === this.email);
       if (existingUser) {
         alert("Bu email ile zaten bir hesap oluşturulmuş.");
         return;
       }
-      users.push({ email: this.email, password: this.password });
-      localStorage.setItem("users", JSON.stringify(users));
+      
+      this.users.push({ id: this.users.length + 1, name: this.name , email: this.email, email_password: this.password , chats:[]});
+      localStorage.setItem("users", JSON.stringify(this.users));
       alert("Başarıyla kayıt oldunuz!");
       this.toggleLoginStatus();
     },

@@ -5,7 +5,9 @@
         <SideBar :username="username" @logout="logout"></SideBar>
       </div>
       <div class="flex-fill p-3 overflow-auto bg-light border border-black mx-3">
-        <router-view></router-view>
+        <router-view
+        :activeUserID="ActiveUser.id"
+        ></router-view>
       </div>
     </div>
     <div class="border border-black">
@@ -21,7 +23,7 @@ import { defineProps, defineEmits, onMounted } from 'vue';
 
 const props = defineProps({
   ActiveUser: {
-    type: String,
+    type: Object,
     required: true,
   },
   username: {
