@@ -15,16 +15,16 @@ import CategoryTen from '@/components/Pages/CategoryTen.vue';
 
 const routes = [
   
-    { path: '/category1', component: CategoryOne },
-    { path: '/category2', component: CategoryTwo },
-    { path: '/category3', component: CategoryThree },
-    { path: '/category4', component: CategoryFour },
-    { path: '/category5', component: CategoryFive },
-    { path: '/category6', component: CategorySix },
-    { path: '/category7', component: CategorySeven },
-    { path: '/category8', component: CategoryEight },
-    { path: '/category9', component: CategoryNine },
-    { path: '/category10', component: CategoryTen },
+    { path: '/:username/category1', component: CategoryOne },
+    { path: '/:username/category2', component: CategoryTwo },
+    { path: '/:username/category3', component: CategoryThree },
+    { path: '/:username/category4', component: CategoryFour },
+    { path: '/:username/category5', component: CategoryFive },
+    { path: '/:username/category6', component: CategorySix },
+    { path: '/:username/category7', component: CategorySeven },
+    { path: '/:username/category8', component: CategoryEight },
+    { path: '/:username/category9', component: CategoryNine },
+    { path: '/:username/category10', component: CategoryTen },
   
   
 ];

@@ -1,28 +1,38 @@
 <template>
   <div id="app" class="d-flex flex-column vh-100">
-    <div class="d-flex flex-grow-1 overflow-hidden">
-      <div class="border border-black d-flex ">
-        <SideBar ></SideBar>
-      </div>
-      <div class="flex-fill p-3 overflow-auto bg-light border border-black mx-3" >
-        <router-view ></router-view>
-      </div>
+    <div v-if="!logIn">
+      <LoginPage @log="log"></LoginPage>
     </div>
-    <div class="border  border-black">
-      <FooterComp></FooterComp>
+    <div v-else>
+      <MainPage :ActiveUser="activeUser" :username="username" @logout="logout"></MainPage>
     </div>
   </div>
 </template>
 
-<script>
-import SideBar from './components/SideBar.vue';
-import FooterComp from './components/FooterComp.vue';
+<script setup>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+import MainPage from './components/MainPage.vue';
+import LoginPage from './components/LoginPage.vue';
 
-export default {
-  name: 'App',
-  components: {
-    SideBar,
-    FooterComp,
-  },
-};
+const logIn = ref(false);
+const activeUser = ref("");
+const username = ref("");
+const router = useRouter();
+
+const logout = () => {
+  logIn.value = false;
+  activeUser.value = "";
+  username.value = "";
+  router.push('/'); 
+}
+
+const log = (email) => {
+  activeUser.value = email;
+  username.value = email.split('@')[0]; 
+  logIn.value = true;
+
+  
+  router.push(`/${username.value}/category1`); 
+}
 </script>
