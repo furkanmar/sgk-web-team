@@ -20,7 +20,7 @@
       <!-- Mesajlaşma Alanı -->
       <div class="col-10">
         <div class="tab-content message-area" id="nav-tabContent" v-if="activeChat">
-          <h5 class="chat-header">Chat with {{ chatPartnerName }}</h5>
+          <h5 class="chat-header">Chat with me{{ chatPartnerName }}</h5>
           <div class="messages">
             <div
               v-for="(message, index) in activeChat.messages"
