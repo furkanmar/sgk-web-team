@@ -1,7 +1,9 @@
 <template>
   <div class="login-page">
-    <img src="@/assets/cs-logo.png" alt="CS Logo" class="mb-2" style="width: 400px; height: auto;">
-    
+    <div class="circle-container">
+    <img src="@/assets/cs-logo-outside.png" class="outer-circle" style="width: 400px; height: auto;">
+    <img src="@/assets/cs-logo-inside.png" class="inner-circle" style="width: 400px; height: auto;">
+    </div>
     <div class="login-container">
       <h1>Hoş Geldiniz</h1>
       <p v-if="login">Lütfen hesabınıza giriş yapın</p>
@@ -142,6 +144,37 @@ export default {
   justify-content: center;
   gap: 20px;
 }
+
+
+.outer-circle{
+    position: absolute;
+    top: 0.1;
+    left: 50;
+    width: 100%;
+    height: 100%;
+    animation: rotate-circle 30s linear infinite; /* 9 yönünde zayıflık*/
+    border-radius: 50%;
+}
+
+.inner-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@keyframes rotate-circle {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
 
 h1 {
   font-size: 2rem;
