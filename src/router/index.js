@@ -7,7 +7,7 @@ import CategoryThree from '@/components/Pages/CategoryThree.vue';
 import CategoryFour from '@/components/Pages/CategoryFour.vue';
 import CategoryFive from '@/components/Pages/CategoryFive.vue';
 import CategorySix from '@/components/Pages/CategorySix.vue';
-import CategorySeven from '@/components/Pages/CategorySeven.vue';
+import CategorySeven from '@/components/Activity/CategorySeven.vue';
 import CategoryEight from '@/components/Pages/CategoryEight.vue';
 import CategoryNine from '@/components/Pages/CategoryNine.vue';
 import CategoryTen from '@/components/Pages/CategoryTen.vue';
