@@ -1,32 +1,31 @@
-
 import { createRouter, createWebHistory } from 'vue-router';
 
 import CategoryOne from '../components/Pages/CategoryOne.vue';
 import CategoryTwo from '@/components/Pages/Message/CategoryTwo.vue';
 import CategoryThree from '@/components/Pages/CategoryThree.vue';
 import CategoryFour from '@/components/Pages/CategoryFour.vue';
-import CategoryFive from '@/components/Pages/CategoryFive.vue';
+import CategoryFive from '@/components/Pages/Blog/CategoryFive.vue';
 import CategorySix from '@/components/Pages/CategorySix.vue';
 import CategorySeven from '@/components/Pages/CategorySeven.vue';
 import CategoryEight from '@/components/Pages/CategoryEight.vue';
 import CategoryNine from '@/components/Pages/CategoryNine.vue';
 import CategoryTen from '@/components/Pages/CategoryTen.vue';
-
+import CreateBlog from '@/components/Pages/Blog/CreateBlog.vue'; 
+import EnterBlog from '@/components/Pages/Blog/EnterBlog.vue';
 
 const routes = [
-  
     { path: '/:username/category1', component: CategoryOne },
     { path: '/:username/category2', component: CategoryTwo },
     { path: '/:username/category3', component: CategoryThree },
     { path: '/:username/category4', component: CategoryFour },
     { path: '/:username/category5', component: CategoryFive },
+    { path: '/:username/category5/create', name: 'CreateBlog', component: CreateBlog }, 
+    { path: '/:username/category5/blog/:id', name: 'EnterDetail', component: EnterBlog },
     { path: '/:username/category6', component: CategorySix },
     { path: '/:username/category7', component: CategorySeven },
     { path: '/:username/category8', component: CategoryEight },
     { path: '/:username/category9', component: CategoryNine },
     { path: '/:username/category10', component: CategoryTen },
-  
-  
 ];
 
 const router = createRouter({
