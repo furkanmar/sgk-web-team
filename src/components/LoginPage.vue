@@ -126,7 +126,7 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(135deg, #a8894c, #000111);
+  background: linear-gradient(135deg, rgb(168, 137, 76), #000111);
 }
 
 .login-container {

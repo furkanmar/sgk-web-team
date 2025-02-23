@@ -11,8 +11,8 @@ import CategorySeven from '@/components/Activity/CategorySeven.vue';
 import CategoryEight from '@/components/Pages/CategoryEight.vue';
 import CategoryNine from '@/components/Pages/CategoryNine.vue';
 import CategoryTen from '@/components/Pages/CategoryTen.vue';
-
-
+import EventRequest from '@/components/Activity/EventRequest.vue';
+import RequestedEvents from '@/components/Activity/RequestedEvents.vue';
 const routes = [
   
     { path: '/:username/category1', component: CategoryOne },
@@ -25,7 +25,8 @@ const routes = [
     { path: '/:username/category8', component: CategoryEight },
     { path: '/:username/category9', component: CategoryNine },
     { path: '/:username/category10', component: CategoryTen },
-  
+    { path: '/event-request', component: EventRequest},
+    {path: '/requested-events', component: RequestedEvents}
   
 ];
 
